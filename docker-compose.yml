@@ -5,9 +5,6 @@ services:
     image: mongo:7.0
     container_name: url-fetcher-mongodb
     restart: unless-stopped
-    environment:
-      MONGO_INITDB_ROOT_USERNAME: ${MONGO_USERNAME:-admin}
-      MONGO_INITDB_ROOT_PASSWORD: ${MONGO_PASSWORD:-changeme123}
     volumes:
       - mongodb_data:/data/db
     networks:
@@ -29,7 +26,7 @@ services:
     environment:
       NODE_ENV: production
       PORT: 3000
-      MONGODB_URI: mongodb://${MONGO_USERNAME:-admin}:${MONGO_PASSWORD:-changeme123}@mongodb:27017/url-content-fetcher?authSource=admin
+      MONGODB_URI: mongodb://mongodb:27017/url-content-fetcher
       CONTENT_SIZE_LIMIT: ${CONTENT_SIZE_LIMIT:-5242880}
       MAX_REDIRECTS: ${MAX_REDIRECTS:-5}
       CONTENT_REFETCH_INTERVAL_HOURS: ${CONTENT_REFETCH_INTERVAL_HOURS:-12}

@@ -100,22 +100,22 @@ cd /opt/url-content-fetcher
 sudo git clone https://github.com/davidori/url-content-fetcher.git .
 ```
 
-### 3. Configure Environment
+### 3. Configure Environment (Optional)
+
+The deploy script auto-creates `.env.production` with default values. To customize:
 
 ```bash
 # Edit production environment file
 sudo nano .env.production
 
-# Set secure MongoDB password
-MONGO_USERNAME=admin
-MONGO_PASSWORD=your-secure-password-here
-
-# Adjust other settings as needed
+# Adjust settings as needed
 CONTENT_SIZE_LIMIT=5242880
 MAX_REDIRECTS=5
 CONTENT_REFETCH_INTERVAL_HOURS=12
 REFETCH_CHECK_INTERVAL_MINUTES=30
 ```
+
+**Note:** MongoDB runs without authentication by default. For production with authentication, see Security Recommendations section.
 
 ### 4. Start Services
 

@@ -100,17 +100,20 @@ fi
 # Set up environment file
 echo -e "\n${YELLOW}[6/7] Configuring environment...${NC}"
 if [ ! -f ".env.production" ]; then
-  echo -e "${RED}Error: .env.production file not found${NC}"
-  echo "Please create .env.production with your configuration"
-  exit 1
-fi
-
-# Generate secure MongoDB password if using default
-if grep -q "changeme123" .env.production; then
-  echo -e "${YELLOW}Generating secure MongoDB password...${NC}"
-  NEW_PASSWORD=$(openssl rand -base64 32)
-  sed -i "s/changeme123/$NEW_PASSWORD/g" .env.production
-  echo -e "${GREEN}✓ Secure password generated${NC}"
+  echo -e "${YELLOW}Creating .env.production file...${NC}"
+  
+  # Create .env.production (no authentication)
+  cat > .env.production <<EOF
+# Application Configuration
+CONTENT_SIZE_LIMIT=5242880
+MAX_REDIRECTS=5
+CONTENT_REFETCH_INTERVAL_HOURS=12
+REFETCH_CHECK_INTERVAL_MINUTES=30
+EOF
+  
+  echo -e "${GREEN}✓ .env.production created${NC}"
+else
+  echo -e "${GREEN}✓ .env.production already exists${NC}"
 fi
 
 # Build and start services
