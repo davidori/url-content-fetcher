@@ -372,9 +372,9 @@ See [DEPLOYMENT.md](DEPLOYMENT.md) for complete deployment guide.
 ```bash
 # On your GCP instance
 sudo su -
-curl -o deploy.sh https://raw.githubusercontent.com/yourusername/url-content-fetcher/main/deploy.sh
+curl -o deploy.sh https://raw.githubusercontent.com/davidori/url-content-fetcher/main/deploy.sh
 chmod +x deploy.sh
-export GITHUB_REPO="https://github.com/yourusername/url-content-fetcher.git"
+export GITHUB_REPO="https://github.com/davidori/url-content-fetcher.git"
 ./deploy.sh
 ```
 

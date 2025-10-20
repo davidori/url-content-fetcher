@@ -29,13 +29,13 @@ ssh your-username@YOUR_INSTANCE_IP
 sudo su -
 
 # Download the deployment script
-curl -o deploy.sh https://raw.githubusercontent.com/yourusername/url-content-fetcher/main/deploy.sh
+curl -o deploy.sh https://raw.githubusercontent.com/davidori/url-content-fetcher/main/deploy.sh
 
 # Make it executable
 chmod +x deploy.sh
 
-# Set your GitHub repository (replace with your repo)
-export GITHUB_REPO="https://github.com/yourusername/url-content-fetcher.git"
+# Set your GitHub repository
+export GITHUB_REPO="https://github.com/davidori/url-content-fetcher.git"
 
 # Run the deployment
 ./deploy.sh
@@ -97,7 +97,7 @@ sudo apt-get install -y docker-ce docker-ce-cli containerd.io docker-buildx-plug
 ```bash
 sudo mkdir -p /opt/url-content-fetcher
 cd /opt/url-content-fetcher
-sudo git clone https://github.com/yourusername/url-content-fetcher.git .
+sudo git clone https://github.com/davidori/url-content-fetcher.git .
 ```
 
 ### 3. Configure Environment

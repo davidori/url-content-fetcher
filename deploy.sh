@@ -14,7 +14,7 @@ YELLOW='\033[1;33m'
 NC='\033[0m' # No Color
 
 # Configuration
-GITHUB_REPO="${GITHUB_REPO:-https://github.com/yourusername/url-content-fetcher.git}"
+GITHUB_REPO="${GITHUB_REPO:-https://github.com/davidori/url-content-fetcher.git}"
 INSTALL_DIR="/opt/url-content-fetcher"
 DOCKER_COMPOSE_VERSION="v2.24.0"
 
